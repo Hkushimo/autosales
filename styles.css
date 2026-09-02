@@ -33,6 +33,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 button,
 input,
 textarea {
@@ -161,6 +166,21 @@ h3 {
 footer p {
   color: var(--muted);
   line-height: 1.58;
+}
+
+.brand-photo {
+  overflow: hidden;
+  margin: 18px 0 0;
+  border: 1px solid rgba(255, 138, 0, 0.28);
+  border-radius: 8px;
+  background: #101010;
+}
+
+.brand-photo img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  filter: saturate(1.05) contrast(1.05);
 }
 
 .fee-card {
