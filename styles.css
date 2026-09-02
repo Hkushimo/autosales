@@ -308,6 +308,7 @@ h3 {
 }
 
 .process-section,
+.shipping-section,
 .examples-section,
 .inquiry-section {
   padding: 84px 0;
@@ -350,11 +351,59 @@ h3 {
 }
 
 .process-grid p,
+.shipping-copy p,
+.shipping-cards p,
 .split-heading p,
 .inquiry-copy p,
 footer p {
   color: var(--muted);
   line-height: 1.58;
+}
+
+.shipping-section {
+  background:
+    linear-gradient(90deg, rgba(255, 138, 0, 0.08), transparent 46%),
+    #050505;
+}
+
+.shipping-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(320px, 1.14fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.shipping-copy {
+  position: sticky;
+  top: 112px;
+}
+
+.shipping-cards {
+  display: grid;
+  gap: 14px;
+}
+
+.shipping-cards article {
+  display: grid;
+  gap: 9px;
+  padding: 24px;
+  border: 1px solid rgba(255, 138, 0, 0.34);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #171717, #0d0d0d);
+}
+
+.shipping-cards span {
+  color: var(--orange);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.shipping-cards strong {
+  font-size: 1.18rem;
+  line-height: 1.3;
+  text-transform: uppercase;
 }
 
 .examples-section {
@@ -622,6 +671,7 @@ address {
 @media (max-width: 980px) {
   .hero-grid,
   .inquiry-grid,
+  .shipping-grid,
   .footer-grid,
   .split-heading {
     grid-template-columns: 1fr;
@@ -637,6 +687,10 @@ address {
   }
 
   .inquiry-copy {
+    position: static;
+  }
+
+  .shipping-copy {
     position: static;
   }
 
@@ -700,6 +754,7 @@ address {
   }
 
   .process-section,
+  .shipping-section,
   .examples-section,
   .inquiry-section {
     padding: 58px 0;
