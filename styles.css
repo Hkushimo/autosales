@@ -132,6 +132,11 @@ textarea {
   display: none;
 }
 
+.mobile-menu summary::marker {
+  content: "";
+  font-size: 0;
+}
+
 .mobile-menu summary span {
   display: block;
   width: 18px;
@@ -520,7 +525,7 @@ address {
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 1024px) {
   .content-shell {
     width: min(100% - 24px, 1080px);
   }
