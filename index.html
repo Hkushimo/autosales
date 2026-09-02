@@ -24,9 +24,21 @@
           <span>Global Syndicate Auto Sales</span>
         </a>
         <nav class="nav-actions" aria-label="Primary">
-          <a href="#inquiry">Inquiry</a>
-          <a href="#process">Process</a>
-          <a class="phone-link" href="tel:+14018546467">(401) 854-6467</a>
+          <a class="inquiry-button" href="#inquiry">Send Inquiry</a>
+          <a class="desktop-link" href="#process">Process</a>
+          <a class="phone-link desktop-link" href="tel:+14018546467">(401) 854-6467</a>
+          <details class="mobile-menu">
+            <summary aria-label="Open menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </summary>
+            <div class="mobile-menu-panel">
+              <a href="#process">Process</a>
+              <a href="tel:+14018546467">Call (401) 854-6467</a>
+              <a href="mailto:globalsyndicatesolutions@gmail.com">Email</a>
+            </div>
+          </details>
         </nav>
       </div>
     </header>
@@ -202,6 +214,13 @@
     <script>
       const inquiryForm = document.getElementById("vehicle-inquiry-form");
       const formStatus = document.getElementById("form-status");
+      const mobileMenu = document.querySelector(".mobile-menu");
+
+      mobileMenu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.open = false;
+        });
+      });
 
       inquiryForm?.addEventListener("submit", async (event) => {
         event.preventDefault();

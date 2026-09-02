@@ -81,10 +81,10 @@ textarea {
 }
 
 .nav-actions {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 18px;
-  flex-wrap: wrap;
 }
 
 .nav-actions a {
@@ -97,6 +97,71 @@ textarea {
 .nav-actions a:hover,
 .phone-link {
   color: var(--white);
+}
+
+.inquiry-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  border: 1px solid var(--orange);
+  border-radius: 4px;
+  padding: 0 14px;
+  background: linear-gradient(180deg, var(--orange-2), var(--orange));
+  color: #111111 !important;
+}
+
+.mobile-menu {
+  display: none;
+  position: relative;
+}
+
+.mobile-menu summary {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  list-style: none;
+}
+
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-menu summary span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 2px 0;
+  border-radius: 999px;
+  background: var(--white);
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  display: grid;
+  min-width: 210px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 138, 0, 0.3);
+  border-radius: 8px;
+  background: #080808;
+  box-shadow: var(--shadow);
+}
+
+.mobile-menu-panel a {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--white);
+}
+
+.mobile-menu-panel a:last-child {
+  border-bottom: 0;
 }
 
 .inquiry-section {
@@ -465,9 +530,13 @@ address {
     gap: 10px;
   }
 
+  .brand-mark {
+    flex: 0 0 auto;
+  }
+
   .brand-mark img {
-    width: 58px;
-    height: 36px;
+    width: 54px;
+    height: 34px;
   }
 
   .brand-mark span {
@@ -482,13 +551,23 @@ address {
   .nav-actions {
     flex: 1;
     justify-content: flex-end;
-    gap: 10px;
+    gap: 8px;
     min-width: 0;
   }
 
-  .nav-actions a {
+  .desktop-link {
+    display: none;
+  }
+
+  .inquiry-button {
+    min-height: 40px;
+    padding: 0 12px;
     font-size: 0.72rem;
     white-space: nowrap;
+  }
+
+  .mobile-menu {
+    display: block;
   }
 
   .inquiry-section {
