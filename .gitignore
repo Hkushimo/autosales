@@ -64,6 +64,3 @@ yarn-error.log*
 /20260813200654-b6a9523a-1564-4a80-a3e9-45b52cc3e48e.jpg
 /global-syndicate-logo.png
 /key_10_214659.jpg
-
-# Local secret for VPS Telegram form handler.
-/telegram_token.txt

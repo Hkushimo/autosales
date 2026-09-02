@@ -12,16 +12,12 @@ Static landing page for GitHub Pages.
 
 ## Form Handling
 
-The inquiry form posts to the VPS handler:
+The inquiry form uses FormSubmit:
 
-`http://66.179.251.13:8788/inquiry`
+`https://formsubmit.co/globalsyndicatesolutions@gmail.com`
 
-The handler stores a backup copy of every submission at:
+FormSubmit sends inquiries to:
 
-`/opt/global-syndicate-form/submissions/inquiries.ndjson`
+`globalsyndicatesolutions@gmail.com`
 
-Telegram delivery requires a valid bot token and chat ID in:
-
-`/opt/global-syndicate-form/.env`
-
-The local `telegram_token.txt` file is ignored by git and should not be committed.
+On the first real submission, FormSubmit may send a confirmation email before forwarding requests.
