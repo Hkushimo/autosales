@@ -549,6 +549,39 @@ textarea:focus {
   font-size: 1rem;
 }
 
+.submit:disabled {
+  cursor: wait;
+  opacity: 0.68;
+  transform: none;
+}
+
+.form-status {
+  display: none;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.form-status.is-visible {
+  display: block;
+}
+
+.form-status.success {
+  border-color: rgba(255, 138, 0, 0.5);
+  background: rgba(255, 138, 0, 0.12);
+  color: #fff;
+}
+
+.form-status.error {
+  border-color: rgba(229, 47, 34, 0.55);
+  background: rgba(229, 47, 34, 0.12);
+  color: #fff;
+}
+
 .honeypot {
   position: absolute;
   left: -10000px;

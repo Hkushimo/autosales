@@ -168,7 +168,8 @@
 
           <form
             class="inquiry-form"
-            action="https://formsubmit.co/globalsyndicatesolutions@gmail.com"
+            id="vehicle-inquiry-form"
+            action="https://formsubmit.co/ajax/globalsyndicatesolutions@gmail.com"
             method="POST"
           >
             <input type="hidden" name="_subject" value="New vehicle inquiry - Global Syndicate Auto Sales">
@@ -249,6 +250,7 @@
               </span>
             </label>
 
+            <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
             <button class="button submit" type="submit">Send to Global Syndicate</button>
           </form>
         </div>
@@ -271,5 +273,45 @@
         </div>
       </div>
     </footer>
+    <script>
+      const inquiryForm = document.getElementById("vehicle-inquiry-form");
+      const formStatus = document.getElementById("form-status");
+
+      inquiryForm?.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const submitButton = inquiryForm.querySelector("button[type='submit']");
+        const formData = new FormData(inquiryForm);
+
+        formStatus.className = "form-status is-visible";
+        formStatus.textContent = "Sending your request...";
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+
+        try {
+          const response = await fetch(inquiryForm.action, {
+            method: "POST",
+            body: formData,
+            headers: { Accept: "application/json" },
+          });
+
+          if (!response.ok) {
+            throw new Error("Submission failed");
+          }
+
+          inquiryForm.reset();
+          formStatus.className = "form-status success is-visible";
+          formStatus.textContent =
+            "Request sent. Global Syndicate Auto Sales will follow up with the next step.";
+        } catch {
+          formStatus.className = "form-status error is-visible";
+          formStatus.textContent =
+            "The form did not send. Please email globalsyndicatesolutions@gmail.com or call (401) 854-6467.";
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = "Send to Global Syndicate";
+        }
+      });
+    </script>
   </body>
 </html>
