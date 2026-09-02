@@ -364,11 +364,6 @@ footer p {
   align-items: start;
 }
 
-.inquiry-copy {
-  position: sticky;
-  top: 108px;
-}
-
 .fee-card {
   display: grid;
   gap: 6px;
@@ -578,10 +573,6 @@ address {
 
   .trust-row div:nth-child(2) {
     border-right: 0;
-  }
-
-  .inquiry-copy {
-    position: static;
   }
 
   .footer-links {
