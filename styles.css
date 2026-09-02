@@ -212,6 +212,24 @@ footer p {
   text-transform: uppercase;
 }
 
+.shipping-note {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.shipping-note strong {
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+.shipping-note p {
+  margin-bottom: 0;
+}
+
 .inquiry-form {
   display: grid;
   gap: 18px;
